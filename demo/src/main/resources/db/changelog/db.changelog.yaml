@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: yourname
+      changes:
+        - createTable:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: nome
+                  type: varchar(255)
+              - column:
+                  name: responsavel
+                  type: varchar(255)
+              - column:
+                  name: data_criacao
+                  type: timestamp
+              - column:
+                  name: data_modificacao
+                  type: timestamp
+              - column:
+                  name: categoria
+                  type: varchar(255)
+              - column:
+                  name: ativo
+                  type: boolean
