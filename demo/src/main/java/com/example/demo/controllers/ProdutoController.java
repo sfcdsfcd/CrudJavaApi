@@ -44,7 +44,7 @@ public class ProdutoController {
     public ResponseEntity<ProdutoDTO> updateProduto(@PathVariable Long id, @RequestBody ProdutoDTO produtoDetails) {
         Optional<ProdutoDTO> produto = produtoService.findById(id);
         if (produto.isPresent()) {
-            produtoDetails.setId(id); // Ensure the ID is set to the path variable
+            produtoDetails.setId(id);
             return ResponseEntity.ok(produtoService.save(produtoDetails));
         } else {
             return ResponseEntity.notFound().build();

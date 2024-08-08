@@ -1,0 +1,29 @@
+### Criação de um Novo Produto
+POST http://localhost:8080/produtos
+Content-Type: application/json
+
+{
+  "nome": "Produto Exemplo",
+  "responsavel": "Responsável Exemplo",
+  "data_criacao": "2024-08-07T12:00:00",
+  "data_modificacao": "2024-08-07T12:00:00",
+  "categoria": "Categoria Exemplo"
+}
+
+### Listar Todos os Produtos
+GET http://localhost:8080/produtos
+
+### Atualizar um Produto
+PUT http://localhost:8080/produtos/{id}
+Content-Type: application/json
+
+{
+  "nome": "Produto Atualizado",
+  "responsavel": "Responsável Atualizado",
+  "data_criacao": "2024-08-07T12:00:00",
+  "data_modificacao": "2024-08-07T12:00:00",
+  "categoria": "Categoria Atualizada"
+}
+
+### Remover um Produto
+DELETE http://localhost:8080/produtos/{id}
