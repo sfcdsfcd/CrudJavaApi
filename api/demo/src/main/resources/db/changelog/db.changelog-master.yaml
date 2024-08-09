@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
       id: 1
-      author: yourname
+      author: SilvioFernando
       changes:
         - createTable:
-            tableName: products
+            tableName: produtos
             columns:
               - column:
                   name: id
