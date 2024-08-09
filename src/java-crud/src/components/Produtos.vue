@@ -23,11 +23,11 @@
       };
     },
     methods: {
-      ...mapActions(['fetchProducts']),
+      ...mapActions(['fetchProdutos']),
       handleSuccess() {
         this.showForm = false;
         this.productToEdit = null;
-        this.fetchProducts();
+        this.fetchProdutos();
       },
       handleEdit(product) {
         this.productToEdit = product;
@@ -35,7 +35,7 @@
       },
     },
     created() {
-      this.fetchProducts();
+      this.fetchProdutos();
     },
   };
   </script>

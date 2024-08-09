@@ -13,6 +13,7 @@ public class Mapper {
         dto.setDataCriacao(produto.getDataCriacao());
         dto.setDataModificacao(produto.getDataModificacao());
         dto.setCategoria(produto.getCategoria());
+        dto.setAtivo(produto.getAtivo());
         return dto;
     }
 
@@ -22,6 +23,7 @@ public class Mapper {
         produto.setNome(dto.getNome());
         produto.setResponsavel(dto.getResponsavel());
         produto.setCategoria(dto.getCategoria());
+        produto.setAtivo(dto.getAtivo());
         return produto;
     }
 }

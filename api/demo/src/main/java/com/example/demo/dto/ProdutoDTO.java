@@ -16,4 +16,5 @@ public class ProdutoDTO {
     private LocalDateTime dataCriacao;
     private LocalDateTime dataModificacao;
     private String categoria;
+    private Boolean ativo;
 }

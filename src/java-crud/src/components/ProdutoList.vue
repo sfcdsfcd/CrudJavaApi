@@ -12,14 +12,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="product in products" :key="product.id">
+          <tr v-for="product in produtos" :key="product.id">
             <td>{{ product.id }}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.responsible }}</td>
-            <td>{{ product.category }}</td>
+            <td>{{ product.nome }}</td>
+            <td>{{ product.responsavel }}</td>
+            <td>{{ product.categoria }}</td>
             <td>
               <button class="btn btn-warning btn-sm" @click="$emit('edit', product)">Edit</button>
-              <button class="btn btn-danger btn-sm" @click="deleteProduct(product.id)">Delete</button>
+              <button class="btn btn-danger btn-sm" @click="deleteProduto(product.id)">Delete</button>
             </td>
           </tr>
         </tbody>
@@ -32,10 +32,10 @@
   
   export default {
     computed: {
-      ...mapGetters(['products']),
+      ...mapGetters(['produtos']),
     },
     methods: {
-      ...mapActions(['deleteProduct']),
+      ...mapActions(['deleteProduto']),
     },
   };
   </script>
