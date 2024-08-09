@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  app-java:
+    build:
+      context: ./api/demo
+    container_name: app-java
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/crudjava
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=123
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  app-vue:
+    build:
+      context: ./src/java-crud
+    container_name: app-vue
+    ports:
+      - "5173:80"
+    networks:
+      - app-network
+
+  db:
+    image: postgres:latest
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: crudjava
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
