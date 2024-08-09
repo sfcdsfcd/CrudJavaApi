@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <h2>Login</h2>
-      <form @submit.prevent="login">
+      <form @submit.prevent="handleLogin">
         <div class="mb-3">
           <label for="username" class="form-label">Username</label>
           <input type="text" class="form-control" id="username" v-model="username" required>
@@ -27,7 +27,7 @@
     },
     methods: {
       ...mapActions(['login']),
-      async login() {
+      async handleLogin() {
         await this.login({ username: this.username, password: this.password });
         this.$router.push('/');
       },
